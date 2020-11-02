@@ -166,8 +166,13 @@ def getInputUser():
     return [layer, index]
 
 
+def minimax(b, depth, maximizingPlayer):
+    if (depth == 0 or b.checkWinGame() or b.checkEndGame()):
+        return
+
+
 def getInputAI(b, player):
-    return [1, 1]
+    return minimax(b, depth, player)
 
 
 if __name__ == "__main__":
